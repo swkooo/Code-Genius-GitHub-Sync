@@ -70,14 +70,15 @@ Chrome 웹 스토어에 게시된 경우 스토어 페이지에서 확장 프로
 
 > 스토어 등록 및 공개 상태에 따라 설치 가능 여부가 달라질 수 있습니다.
 
+![Code Genius GitHub Sync 설치 및 사용 가이드](docs/guide.png)
+
 ### 개발자 모드로 설치
 
-1. [GitHub 저장소](https://github.com/swkooo/Code-Genius-GitHub-Sync)에서 코드를 내려받습니다.
-2. ZIP 파일을 다운로드했다면 압축을 해제합니다.
-3. Chrome 주소창에 `chrome://extensions`를 입력합니다.
-4. 오른쪽 위의 **개발자 모드**를 활성화합니다.
-5. **압축해제된 확장 프로그램을 로드**를 클릭합니다.
-6. `manifest.json` 파일이 있는 폴더를 선택합니다.
+1. ZIP 파일을 다운로드 후 압축을 해제합니다.
+2. Chrome 주소창에 `chrome://extensions`를 입력합니다.
+3. 오른쪽 위의 **개발자 모드**를 활성화합니다.
+4. **압축해제된 확장 프로그램을 로드**를 클릭합니다.
+5. `manifest.json` 파일이 있는 폴더를 선택합니다.
 
 ## 사용 방법
 
