@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Code Genius GitHub Sync",
+  "version": "0.4.1",
+  "description": "KT AIVLE School Code Genius에서 제출 성공 코드를 GitHub 저장소에 업로드합니다. GitHub OAuth 인증을 사용합니다.",
+  "permissions": [
+    "scripting",
+    "storage",
+    "windows",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://educodegenius.com/*",
+    "https://api.github.com/*",
+    "https://github.com/*",
+    "https://github.com/login/*",
+    "https://code-genius-github-sync.seowon710.workers.dev/*"
+  ],
+  "action": {
+    "default_title": "Code Genius GitHub Sync"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://educodegenius.com/*"
+      ],
+      "js": [
+        "page-hook.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://educodegenius.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "open-settings": {
+      "suggested_key": {
+        "default": "Alt+Shift+G",
+        "windows": "Alt+Shift+G",
+        "mac": "Alt+Shift+G",
+        "linux": "Alt+Shift+G"
+      },
+      "description": "GitHub 설정 창 열기"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

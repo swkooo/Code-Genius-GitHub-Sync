@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Code Genius GitHub Sync</title><link rel="stylesheet" href="popup.css"></head>
+<body><main class="wide">
+  <header><h1>Code Genius <span>→ GitHub</span></h1><p class="sub">제출에 성공한 코드를 깃허브에 업로드하는 자동화 툴입니다. 먼저 익스텐션 설정 완료 후 창을 킨 상태로 유지해주세요!</p></header>
+  <section class="card"><h2>1. GitHub 연결</h2>
+    <div class="actions"><button id="connect" type="button">GitHub로 인증하기</button></div>
+    <div id="authStatus" class="help" role="status"></div>
+  </section>
+  <section class="card"><h2>2. 기존 저장소 선택</h2>
+    <label>저장소<select id="repoSelect" disabled><option value="">먼저 GitHub 인증을 진행하세요.</option></select></label>
+    <div class="actions"><button id="refreshRepos" type="button" class="secondary" disabled>저장소 새로고침</button></div>
+    <label>브랜치<input id="branch" autocomplete="off" value="main"></label>
+    <label>저장 폴더<input id="root" autocomplete="off" value="CodeGenius"></label>
+    <button id="saveRepo" type="button" disabled>저장소 연결 저장</button>
+    <details class="create-repo">
+      <summary>새 공개 저장소 만들기</summary>
+      <label>저장소 이름<input id="newRepoName" autocomplete="off" value="CodingTest" placeholder="CodingTest" maxlength="100"></label>
+      <label>설명(선택)<input id="newRepoDescription" autocomplete="off" placeholder="Code Genius 제출 코드 백업"></label>
+      <label class="check-row"><input id="newRepoInitialize" type="checkbox" checked> README 파일로 초기화</label>
+      <button id="createRepo" type="button" disabled>공개 저장소 생성</button>
+      <p class="help">공개 저장소로 생성됩니다. 생성에 실패하면 GitHub App의 Repository permissions에서 Repository creation: Read and write 권한을 확인하세요.</p>
+    </details>
+    <p id="repoStatus" class="help" role="status"></p>
+  </section>
+  <section class="card status"><h2>최근 상태</h2><div class="status-line"><span id="spinner" class="spinner hidden"></span><span id="status" role="status" aria-live="polite">상태를 불러오는 중…</span></div><div class="progress-track hidden" id="progressTrack"><div class="progress-bar"></div></div><button id="refresh" type="button" class="secondary">상태 새로고침</button></section>
+</main><script src="popup.js"></script></body></html>
